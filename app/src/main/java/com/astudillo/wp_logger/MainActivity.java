@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity
 
 		_lstViewMensajes = (ListView) findViewById(R.id.lstMensajes);
 		_listaMensajes = new ArrayList<>();
-		_listaMensajesAdapter = new ArrayAdapter<String>(this,R.layout.content_main,_listaMensajes);
+		_listaMensajesAdapter = new ArrayAdapter<String>(this,R.layout.lst_view_item_,_listaMensajes);
 		_lstViewMensajes.setAdapter(_listaMensajesAdapter);
 
 	}
