@@ -16,8 +16,8 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity
 {
 	private ListView _lstViewMensajes;
-	private ArrayList<String> _listaMensajes;
-	private ArrayAdapter<String> _listaMensajesAdapter;
+	private ArrayList<NotificationMessage> _listaMensajes;
+	private NotificationMessageAdapter _listaMensajesAdapter;
 	int contador = 0;
 
 	@Override
@@ -37,14 +37,14 @@ public class MainActivity extends AppCompatActivity
 				//Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
 				//	.setAction("Action", null).show();
 				contador++;
-				_listaMensajes.add(String.valueOf( contador));
+				_listaMensajes.add(new NotificationMessage("Esperanza", String.valueOf(contador)));
 				_listaMensajesAdapter.notifyDataSetChanged();
 			}
 		});
 
 		_lstViewMensajes = (ListView) findViewById(R.id.lstMensajes);
 		_listaMensajes = new ArrayList<>();
-		_listaMensajesAdapter = new ArrayAdapter<String>(this,R.layout.lst_view_item_,_listaMensajes);
+		_listaMensajesAdapter = new NotificationMessageAdapter(this,R.layout.list_view_item,_listaMensajes);
 		_lstViewMensajes.setAdapter(_listaMensajesAdapter);
 
 	}
